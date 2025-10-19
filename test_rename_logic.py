@@ -6,6 +6,7 @@ test cases covering various scenarios.
 """
 
 import unittest
+import time
 from datetime import datetime
 from rename_logic_example import RenameManager, Entity, RenameError
 
@@ -106,7 +107,6 @@ class TestRenameLogic(unittest.TestCase):
         """Test that entity's updated_at timestamp is modified"""
         original_time = self.entity1.updated_at
         # Small delay to ensure timestamp difference
-        import time
         time.sleep(0.01)
         
         self.manager.rename("test_entity_1", "renamed_entity")
